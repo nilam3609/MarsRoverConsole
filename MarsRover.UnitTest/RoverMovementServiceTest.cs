@@ -99,7 +99,7 @@ namespace MarsRover.UnitTest
 
             //Act and Assert
             var response = Assert.ThrowsAsync<Exception>(async () => await roverMovementService.MoveRover(command, arrangedPosition, plateauModel));
-            Assert.AreEqual("Rover is waiting for rescue at: 0 6 N", response.Message);
+            Assert.AreEqual("Rover crashed and is waiting for rescue at location: 0 6 N", response.Message);
         }
     }
 }

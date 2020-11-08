@@ -2,6 +2,7 @@ using MarsRover.Manager;
 using MarsRover.Model;
 using Moq;
 using NUnit.Framework;
+using NUnit.Framework.Internal;
 using System;
 using System.Threading.Tasks;
 
@@ -25,6 +26,7 @@ namespace MarsRover.UnitTest
 
         [TestCase("LML")]
         [TestCase("MMLMLMM")]
+        [Description("Given the valid command to move the rover is used When RoverMovement service is called Then final position is 2 3 S")]
         public async Task GivenTheCommandIsValidWhenMoveRoverIsCalledThenRoverPositionIsChanged(string command)
         {
             //Arrange
@@ -57,6 +59,7 @@ namespace MarsRover.UnitTest
         }
 
         [Test]
+        [Description("Given the invalid command to move rover is used When RoverMovement service is called Then throws exception")]
         public async Task GivenTheCommandIsInvalidWhenMoveRoverIsCalledThenThrowsException()
         {
             //Arrange
@@ -80,6 +83,7 @@ namespace MarsRover.UnitTest
         }
 
         [Test]
+        [Description("Given the valid command is passed And movement is out of bound When RoverMovement service is called Then throws exception")]
         public async Task GivenTheCommandIsValidWhenMoveRoverIsCalledAndRoverIsMovingOutOfBoundThenThrowsException()
         {
             //Arrange

@@ -24,6 +24,7 @@ namespace MarsRover.UnitTest
 
         [TestCase("1 2 N")]
         [TestCase("3 3 E")]
+        [Description("Given the valid command is passed to deploy rover When RoverDeployment service is called Then it returns correct position")]
         public void GivenCommandIsValidWhenRoverIsDeployedThenReturnsCorrectPosition(string command)
         {
             //Arrange
@@ -43,6 +44,7 @@ namespace MarsRover.UnitTest
         }
 
         [TestCase("-1 2 N")]
+        [Description("Given the invalid command is passed to deploy rover When RoverDeployment service is called Then it throws an exception")]
         public void GivenCommandIsInvalidWhenRoverIsDeployedThenThrowsException(string command)
         {
             //Arrange
